@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add new Employee</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h1>Add new Employee</h1>
+		</div>
+		<div class="card-body">
+			<form th:action = @{/insertBank} th:object="${stdObj}" method = "post">
+				<div class="form-group">
+					<label> Enter Bank EmployeeId: </label> <input type="text" name="fName"
+						th:field="*{BankEmployeeId}" class="form-control"
+						placeholder="Enter your EmployeeId" />
+						
+						<label> Enter Bank EmployeeName: </label> 
+							<input type="text" name="lName" 
+							th:field="*{BankEmployeeName}"
+						class="form-control" placeholder="Enter your EmployeeName" /> 
+						
+						<label>Enter BankEmployeeSalary: </label> 
+						<input type="text" name="BankEmployeeSalary"
+						th:field="*{BankEmployeeSalary}" class="form-control"
+						placeholder=" Enter Your EmployeeSalary" />
+						
+						<label>Enter BankEmployeeSection: </label> 
+						<input type="text" name="BankEmployeeSection"
+						th:field="*{BankEmployeeSection}" class="form-control"
+						placeholder=" Enter Your EmployeeSection" />
+				</div>
+				
+				<div class = "box-footer">
+				<button type = "submit" class = "btn btn-primary">
+				Add this std!
+				</button>
+				
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

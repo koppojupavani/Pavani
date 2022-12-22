@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<title>Insert Bank Employee</title>
+</head>
+<body>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<h1>List of Bank</h1>
+		</div>
+		<div>
+			<div class="col-lg-3">
+				<a th:href="@{Employee/createNewEmployee}" class = "btn btn-primary btn-smmb-3">Add new
+					Employee</a>
+			</div>
+		</div>
+
+		<table class="table table-striped table-bordered">
+			<thead class="table-primary">
+				<tr>
+					<th>BankEmployeeId</th>
+					<th>BankEmployeeName</th>
+					<th>BankEmployeeSalary</th>
+					<th>BankEmployeeSections</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="Employee : ${EmployeeList} ">
+					<td th:text="${Employee.EmployeeId}"></td>
+					<td th:text="${Employee.EmployeeName}"></td>
+					<td th:text="${Employee.EmployeeSalary}"></td>
+					<td th:text="${Employee.EmployeeSections}"></td>
+				</tr>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+</body>
+</html>
